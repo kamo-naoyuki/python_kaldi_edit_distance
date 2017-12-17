@@ -64,4 +64,4 @@ def levenshtein_alignment(seq1, seq2, eps_symbol):
     if isinstance(ele, str):
         rseq1 = [i.decode() for i in rseq1]
         rseq2 = [i.decode() for i in rseq2]
-    return output, rseq1, rseq2
+    return total, rseq1, rseq2

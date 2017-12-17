@@ -22,7 +22,7 @@
 #include <algorithm>
 #include <utility>
 #include <vector>
-#include "utils/stl-utils.h"
+#include "util/stl-utils.h"
 #include "base/kaldi-types.h"
 
 namespace kaldi {

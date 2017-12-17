@@ -1,40 +1,59 @@
-"""
-Copyright 2009-2011  Microsoft Corporation;  Haihua Xu;  Yanmin Qian
+from collections.abc import Hashable
+from collections import OrderedDict
 
-See ../../COPYING for clarification regarding multiple authors
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
-THIS CODE IS PROVIDED *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
-WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
-MERCHANTABLITY OR NON-INFRINGEMENT.
-See the Apache 2 License for the specific language governing permissions and
-limitations under the License.
-"""
 from . import edit_distance as ed
 
 
-def _get_ele(seq1, seq2):
-    seq1 = list(seq1)
-    seq2 = list(seq2)
-
+def _get_seqs(seq1, seq2, return_map=False):
+    seq1 = tuple(seq1)
+    seq2 = tuple(seq2)
     if len(seq1) == len(seq2) == 0:
         return 0
     first_ele = (seq1 + seq2)[0]
-    if any(not isinstance(v, type(first_ele)) for v in (seq1 + seq2)):
+
+    # If all elements has same type each other and it is one of int, float, str
+    if all(isinstance(v, type(first_ele)) for v in (seq1 + seq2)) and\
+            all(isinstance(v, (int, float, str)) for v in (seq1 + seq2)):
+        if return_map:
+            return first_ele, seq1, seq2, None
+        else:
+            return first_ele, seq1, seq2
+    elif all(isinstance(v, Hashable) for v in (seq1 + seq2)):
+        # Note: This operation could cause overheads
+        _map = {v: i for i, v in enumerate(set(seq1 + seq2))}
+        seq1 = tuple(map(_map.__getitem__, seq1))
+        seq2 = tuple(map(_map.__getitem__, seq2))
+        if return_map:
+            _map = {v: k for k, v in _map.items()}
+            return len(_map), seq1, seq2, _map
+        else:
+            return len(_map), seq1, seq2
+    else:
         raise ValueError(
-            'All types of elements in seq1 and seq2 should be same')
-    return first_ele
+            'All elements in the input sequences must be hashable')
 
 
 def levenshtein_edit_distance(seq1, seq2, detail=False):
     """
+
     (This description comes from kaldi/src/util/edit-distance-inl.h)
+
+    Copyright 2009-2011  Microsoft Corporation;  Haihua Xu;  Yanmin Qian
+
+    See ../../COPYING for clarification regarding multiple authors
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+    THIS CODE IS PROVIDED *AS IS* BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+    KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY IMPLIED
+    WARRANTIES OR CONDITIONS OF TITLE, FITNESS FOR A PARTICULAR PURPOSE,
+    MERCHANTABLITY OR NON-INFRINGEMENT.
+    See the Apache 2 License for the specific language governing permissions and
+    limitations under the License.
 
     Algorithm:
         write A and B for the sequences, with elements a_0 ..
@@ -52,8 +71,8 @@ def levenshtein_edit_distance(seq1, seq2, detail=False):
     The outer iterations range over m = 0..M.
 
     Args:
-        seq1 (List[Union[int, float, str]]):
-        seq1 (List[Union[int, float, str]]):
+        seq1 (List[T]):
+        seq1 (List[T]):
         detail (bool):
     Returns:
         if detail:
@@ -66,9 +85,7 @@ def levenshtein_edit_distance(seq1, seq2, detail=False):
     """
     if not isinstance(detail, bool):
         raise TypeError('details arg must have bool type')
-    seq1 = tuple(seq1)
-    seq2 = tuple(seq2)
-    ele = _get_ele(seq1, seq2)
+    ele, seq1, seq2 = _get_seqs(seq1, seq2)
 
     if isinstance(ele, int):
         if detail:
@@ -105,12 +122,16 @@ def levenshtein_alignment(seq1, seq2, eps_symbol):
         aligned1 (List[T]):
         aligned2 (List[T]):
     """
-    seq1 = tuple(seq1)
-    seq2 = tuple(seq2)
+    ele, seq1, seq2, _map = _get_seqs(seq1, seq2, return_map=True)
 
-    ele = _get_ele(seq1, seq2)
-    if not isinstance(eps_symbol, type(ele)):
-        raise TypeError('eps_symbol must have {} type'.format(type(ele)))
+    if _map is not None:
+        hash_mode = True
+        _map[ele] = eps_symbol
+        eps_symbol = ele
+    else:
+        if not isinstance(eps_symbol, type(ele)):
+            raise TypeError('eps_symbol should have {} type'.format(type(ele)))
+        hash_mode = False
 
     if isinstance(ele, int):
         total, output = ed.levenshtein_alignment_long(seq1, seq2, eps_symbol)
@@ -127,6 +148,12 @@ def levenshtein_alignment(seq1, seq2, eps_symbol):
             'Not supported type: {}'.format(type(ele)))
     rseq1 = [v1 for v1, v2 in output]
     rseq2 = [v2 for v1, v2 in output]
+
+    if hash_mode:
+        print(_map)
+        rseq1 = [_map[v1] for v1, v2 in output]
+        rseq2 = [_map[v2] for v1, v2 in output]
+
     if isinstance(ele, str):
         rseq1 = [i.decode() for i in rseq1]
         rseq2 = [i.decode() for i in rseq2]

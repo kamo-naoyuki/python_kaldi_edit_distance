@@ -15,6 +15,8 @@ def _get_ele(seq1, seq2):
 
 
 def levenshtein_edit_distance(seq1, seq2, details=False):
+    if not isinstance(details, bool):
+        raise TypeError('details arg must have bool type')
     ele = _get_ele(seq1, seq2)
 
     if isinstance(ele, int):
@@ -22,12 +24,12 @@ def levenshtein_edit_distance(seq1, seq2, details=False):
             return ed.levenshtein_edit_distance_detail_int(seq1, seq2)
         else:
             return ed.levenshtein_edit_distance_int(seq1, seq2)
-    if isinstance(ele, float):
+    elif isinstance(ele, float):
         if details:
             return ed.levenshtein_edit_distance_detail_float(seq1, seq2)
         else:
             return ed.levenshtein_edit_distance_float(seq1, seq2)
-    if isinstance(ele, (str, bytes)):
+    elif isinstance(ele, (str, bytes)):
         if isinstance(ele, str):
             seq1 = [i.encode() for i in seq1]
             seq2 = [i.encode() for i in seq2]
@@ -47,10 +49,9 @@ def levenshtein_alignment(seq1, seq2, eps_symbol):
 
     if isinstance(ele, int):
         total, output = ed.levenshtein_alignment_int(seq1, seq2, eps_symbol)
-
     elif isinstance(ele, float):
         total, output = ed.levenshtein_alignment_float(seq1, seq2, eps_symbol)
-    if isinstance(ele, (str, bytes)):
+    elif isinstance(ele, (str, bytes)):
         if isinstance(ele, str):
             seq1 = [i.encode() for i in seq1]
             seq2 = [i.encode() for i in seq2]

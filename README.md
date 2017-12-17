@@ -17,4 +17,3 @@ python wrappers of the edit_distance functions of Kaldi-ASR: https://github.com/
 
 ## TODO
 - Add test codes
-- Arbitrary type objects

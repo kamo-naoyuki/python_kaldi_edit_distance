@@ -7,7 +7,7 @@ from libcpp.pair cimport pair
 
 
 ctypedef int int32
-cdef extern from "utils/edit-distance-inl.h" namespace "kaldi":
+cdef extern from "util/edit-distance-inl.h" namespace "kaldi":
     int32 LevenshteinEditDistance[T](const vector[T] &a,
                                      const vector[T] &b)
     int32 LevenshteinEditDistance[T](const vector[T] &ref,
@@ -19,16 +19,16 @@ cdef extern from "utils/edit-distance-inl.h" namespace "kaldi":
                                   vector[pair[T, T] ] *output)
 
 
-def levenshtein_edit_distance_int(seq1, seq2):
-    cdef vector[int] vseq1 = seq1
-    cdef vector[int] vseq2 = seq2
-    return LevenshteinEditDistance[int](vseq1, vseq2)
+def levenshtein_edit_distance_long(seq1, seq2):
+    cdef vector[long] vseq1 = seq1
+    cdef vector[long] vseq2 = seq2
+    return LevenshteinEditDistance[long](vseq1, vseq2)
 
 
-def levenshtein_edit_distance_float(seq1, seq2):
-    cdef vector[float] vseq1 = seq1
-    cdef vector[float] vseq2 = seq2
-    return LevenshteinEditDistance[float](vseq1, vseq2)
+def levenshtein_edit_distance_double(seq1, seq2):
+    cdef vector[double] vseq1 = seq1
+    cdef vector[double] vseq2 = seq2
+    return LevenshteinEditDistance[double](vseq1, vseq2)
 
 
 def levenshtein_edit_distance_bytes(seq1, seq2):
@@ -37,23 +37,23 @@ def levenshtein_edit_distance_bytes(seq1, seq2):
     return LevenshteinEditDistance[string](vseq1, vseq2)
 
 
-def levenshtein_edit_distance_detail_int(seq1, seq2):
-    cdef vector[int] vseq1 = seq1
-    cdef vector[int] vseq2 = seq2
+def levenshtein_edit_distance_detail_long(seq1, seq2):
+    cdef vector[long] vseq1 = seq1
+    cdef vector[long] vseq2 = seq2
     cdef int* ins = [-1]
     cdef int* _del = [-1]
     cdef int* sub = [-1]
-    total = LevenshteinEditDistance[int](vseq1, vseq2, ins, _del, sub)
+    total = LevenshteinEditDistance[long](vseq1, vseq2, ins, _del, sub)
     return total, ins[0], _del[0], sub[0],
 
 
-def levenshtein_edit_distance_detail_float(seq1, seq2):
-    cdef vector[float] vseq1 = seq1
-    cdef vector[float] vseq2 = seq2
+def levenshtein_edit_distance_detail_double(seq1, seq2):
+    cdef vector[double] vseq1 = seq1
+    cdef vector[double] vseq2 = seq2
     cdef int* ins = [-1]
     cdef int* _del = [-1]
     cdef int* sub = [-1]
-    total = LevenshteinEditDistance[float](vseq1, vseq2, ins, _del, sub)
+    total = LevenshteinEditDistance[double](vseq1, vseq2, ins, _del, sub)
     return total, ins[0], _del[0], sub[0],
 
 
@@ -67,21 +67,21 @@ def levenshtein_edit_distance_detail_bytes(seq1, seq2):
     return total, ins[0], _del[0], sub[0],
 
 
-def levenshtein_alignment_int(seq1, seq2, eps_symbol):
-    cdef vector[int] vseq1 = seq1
-    cdef vector[int] vseq2 = seq2
-    cdef int _eps_symbol = eps_symbol
-    cdef vector[pair[int, int]] output = [(-1, -1)]
-    total = LevenshteinAlignment[int](vseq1, vseq2, _eps_symbol, &output)
+def levenshtein_alignment_long(seq1, seq2, eps_symbol):
+    cdef vector[long] vseq1 = seq1
+    cdef vector[long] vseq2 = seq2
+    cdef long _eps_symbol = eps_symbol
+    cdef vector[pair[long, long]] output = [(-1, -1)]
+    total = LevenshteinAlignment[long](vseq1, vseq2, _eps_symbol, &output)
     return total, output
 
 
-def levenshtein_alignment_float(seq1, seq2, eps_symbol):
-    cdef vector[float] vseq1 = seq1
-    cdef vector[float] vseq2 = seq2
-    cdef float _eps_symbol = eps_symbol
-    cdef vector[pair[float , float]] output = [(-1., -1.)]
-    total = LevenshteinAlignment[float](vseq1, vseq2, _eps_symbol, &output)
+def levenshtein_alignment_double(seq1, seq2, eps_symbol):
+    cdef vector[double] vseq1 = seq1
+    cdef vector[double] vseq2 = seq2
+    cdef double _eps_symbol = eps_symbol
+    cdef vector[pair[double , double]] output = [(-1., -1.)]
+    total = LevenshteinAlignment[double](vseq1, vseq2, _eps_symbol, &output)
     return total, output
 
 
@@ -91,4 +91,6 @@ def levenshtein_alignment_bytes(seq1, seq2, eps_symbol):
     cdef string _eps_symbol = eps_symbol
     cdef vector[pair[string, string]] output = [(b'', b'')]
     total = LevenshteinAlignment[string](vseq1, vseq2, _eps_symbol, &output)
+    rseq1 = [v1 for v1, v2 in output]
+    rseq2 = [v2 for v1, v2 in output]
     return total, output

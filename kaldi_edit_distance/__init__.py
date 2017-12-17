@@ -72,14 +72,14 @@ def levenshtein_edit_distance(seq1, seq2, detail=False):
 
     if isinstance(ele, int):
         if detail:
-            return ed.levenshtein_edit_distance_detail_int(seq1, seq2)
+            return ed.levenshtein_edit_distance_detail_long(seq1, seq2)
         else:
-            return ed.levenshtein_edit_distance_int(seq1, seq2)
+            return ed.levenshtein_edit_distance_long(seq1, seq2)
     elif isinstance(ele, float):
         if detail:
-            return ed.levenshtein_edit_distance_detail_float(seq1, seq2)
+            return ed.levenshtein_edit_distance_detail_double(seq1, seq2)
         else:
-            return ed.levenshtein_edit_distance_float(seq1, seq2)
+            return ed.levenshtein_edit_distance_double(seq1, seq2)
     elif isinstance(ele, (str, bytes)):
         if isinstance(ele, str):
             seq1 = [i.encode() for i in seq1]
@@ -113,9 +113,9 @@ def levenshtein_alignment(seq1, seq2, eps_symbol):
         raise TypeError('eps_symbol must have {} type'.format(type(ele)))
 
     if isinstance(ele, int):
-        total, output = ed.levenshtein_alignment_int(seq1, seq2, eps_symbol)
+        total, output = ed.levenshtein_alignment_long(seq1, seq2, eps_symbol)
     elif isinstance(ele, float):
-        total, output = ed.levenshtein_alignment_float(seq1, seq2, eps_symbol)
+        total, output = ed.levenshtein_alignment_double(seq1, seq2, eps_symbol)
     elif isinstance(ele, (str, bytes)):
         if isinstance(ele, str):
             seq1 = [i.encode() for i in seq1]

@@ -1,20 +1,23 @@
-from distutils.core import setup
+from setuptools import setup
 from distutils.extension import Extension
+from setuptools import Command
 import os.path
+
+cwd = os.path.abspath(os.path.dirname(__file__))
+pythondir = 'kaldi_edit_distance'
+
 
 try:
     from Cython.Build import cythonize
     USE_CYTHON = True
 except ImportError:
     USE_CYTHON = False
-ext = '.pyx' if USE_CYTHON else '.cpp'
+ext = '.pyx' if USE_CYTHON else '.c'
 
-include_path = os.path.join(os.path.abspath(os.path.dirname(__file__)),
-                            'kaldi_src')
 extensions =\
-    [Extension(name='kaldi_edit_distance/edit_distance',
-               sources=['kaldi_edit_distance/edit_distance' + ext],
-               include_dirs=[include_path],
+    [Extension(name=os.path.join(pythondir, 'edit_distance'),
+               sources=[os.path.join(pythondir, 'edit_distance' + ext)],
+               include_dirs=[os.path.join(cwd, 'kaldi_src')],
                extra_compile_args=['-O3'])]
 
 if USE_CYTHON:

@@ -19,13 +19,24 @@
 
 #ifndef KALDI_UTIL_EDIT_DISTANCE_INL_H_
 #define KALDI_UTIL_EDIT_DISTANCE_INL_H_
-#include <algorithm>
-#include <utility>
+// #include <algorithm>
+// #include <utility>
 #include <vector>
-#include "util/stl-utils.h"
 #include "base/kaldi-types.h"
+#include "base/kaldi-error.h"
+
 
 namespace kaldi {
+
+//  (Moved from util/stl-utils.h)
+/// Reverses the contents of a vector.
+template<typename T>
+inline void ReverseVector(std::vector<T> *vec) {
+  KALDI_ASSERT(vec != NULL);
+  size_t sz = vec->size();
+  for (size_t i = 0; i < sz/2; i++)
+    std::swap( (*vec)[i], (*vec)[sz-1-i]);
+}
 
 template<class T>
 int32 LevenshteinEditDistance(const std::vector<T> &a,

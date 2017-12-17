@@ -34,7 +34,7 @@
 #include <unistd.h>
 #endif
 
-#include <limits>
+// #include <limits>
 #include <string>
 
 #if defined(_MSC_VER)

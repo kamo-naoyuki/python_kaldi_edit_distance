@@ -22,11 +22,11 @@
 #ifndef KALDI_BASE_KALDI_ERROR_H_
 #define KALDI_BASE_KALDI_ERROR_H_ 1
 
-#include <cstdio>
-#include <cstring>
+// #include <cstdio>
+// #include <cstring>
 #include <sstream>
-#include <stdexcept>
-#include <string>
+// #include <stdexcept>
+// #include <string>
 #include <vector>
 
 #include "base/kaldi-types.h"

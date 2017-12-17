@@ -1,7 +1,13 @@
 from collections.abc import Hashable
+from collections import namedtuple
 from collections import OrderedDict
+import sys
 
-from . import edit_distance as ed
+from . import _edit_distance as ed
+
+
+ErrorStats = namedtuple('ErrorStats',
+                        ['total_cost', 'ins_num', 'del_num', 'sub_num'])
 
 
 def _get_seqs(seq1, seq2, return_map=False):
@@ -75,13 +81,7 @@ def levenshtein_edit_distance(seq1, seq2, detail=False):
         seq1 (List[T]):
         detail (bool):
     Returns:
-        if detail:
-            total (int)
-            insertion (int)
-            deletion (int),
-            substitution (int)
-        else:
-            total (int)
+        ret (Union[ErrorStats, int])
     """
     if not isinstance(detail, bool):
         raise TypeError('details arg must have bool type')
@@ -89,12 +89,14 @@ def levenshtein_edit_distance(seq1, seq2, detail=False):
 
     if isinstance(ele, int):
         if detail:
-            return ed.levenshtein_edit_distance_detail_long(seq1, seq2)
+            return ErrorStats(
+                *ed.levenshtein_edit_distance_detail_long(seq1, seq2))
         else:
             return ed.levenshtein_edit_distance_long(seq1, seq2)
     elif isinstance(ele, float):
         if detail:
-            return ed.levenshtein_edit_distance_detail_double(seq1, seq2)
+            return ErrorStats(
+                *ed.levenshtein_edit_distance_detail_double(seq1, seq2))
         else:
             return ed.levenshtein_edit_distance_double(seq1, seq2)
     elif isinstance(ele, (str, bytes)):
@@ -102,7 +104,8 @@ def levenshtein_edit_distance(seq1, seq2, detail=False):
             seq1 = [i.encode() for i in seq1]
             seq2 = [i.encode() for i in seq2]
         if detail:
-            return ed.levenshtein_edit_distance_detail_bytes(seq1, seq2)
+            return ErrorStats(
+                *ed.levenshtein_edit_distance_detail_bytes(seq1, seq2))
         else:
             return ed.levenshtein_edit_distance_bytes(seq1, seq2)
     else:

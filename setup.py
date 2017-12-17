@@ -3,9 +3,6 @@ from distutils.extension import Extension
 from setuptools import Command
 import os.path
 
-cwd = os.path.abspath(os.path.dirname(__file__))
-pythondir = 'kaldi_edit_distance'
-
 
 try:
     from Cython.Build import cythonize
@@ -14,9 +11,10 @@ except ImportError:
     USE_CYTHON = False
 ext = '.pyx' if USE_CYTHON else '.c'
 
+cwd = os.path.abspath(os.path.dirname(__file__))
 extensions =\
-    [Extension(name=os.path.join(pythondir, 'edit_distance'),
-               sources=[os.path.join(pythondir, 'edit_distance' + ext)],
+    [Extension(name='kaldi_edit_distance._edit_distance',
+               sources=['kaldi_edit_distance/_edit_distance' + ext],
                include_dirs=[os.path.join(cwd, 'kaldi_src')],
                extra_compile_args=['-O3'])]
 

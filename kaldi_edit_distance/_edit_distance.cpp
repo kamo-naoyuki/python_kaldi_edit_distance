@@ -4,13 +4,10 @@
 {
     "distutils": {
         "depends": [
-            "/Users/kamo/dnn/cyked/kaldi_src/util/edit-distance-inl.h"
+            "kaldi_edit_distance/edit-distance-inl.h"
         ],
         "extra_compile_args": [
             "-O3"
-        ],
-        "include_dirs": [
-            "/Users/kamo/dnn/cyked/kaldi_src"
         ],
         "language": "c++"
     }
@@ -270,7 +267,7 @@ static CYTHON_INLINE float __PYX_NAN() {
 #include "string.h"
 #include <string>
 #include <utility>
-#include "util/edit-distance-inl.h"
+#include "edit-distance-inl.h"
 #ifdef _OPENMP
 #include <omp.h>
 #endif /* _OPENMP */
@@ -482,15 +479,6 @@ static const char *__pyx_f[] = {
   "kaldi_edit_distance/_edit_distance.pyx",
   "stringsource",
 };
-
-/* "kaldi_edit_distance/_edit_distance.pyx":9
- * 
- * 
- * ctypedef int int32             # <<<<<<<<<<<<<<
- * cdef extern from "util/edit-distance-inl.h" namespace "kaldi":
- *     int32 LevenshteinEditDistance[T](const vector[T] &a,
- */
-typedef int __pyx_t_19kaldi_edit_distance_14_edit_distance_int32;
 
 /*--- Type declarations ---*/
 
@@ -771,7 +759,7 @@ static PyObject *__pyx_codeobj__18;
 static PyObject *__pyx_codeobj__20;
 static PyObject *__pyx_codeobj__22;
 
-/* "kaldi_edit_distance/_edit_distance.pyx":22
+/* "kaldi_edit_distance/_edit_distance.pyx":21
  * 
  * 
  * def levenshtein_edit_distance_long(seq1, seq2):             # <<<<<<<<<<<<<<
@@ -811,11 +799,11 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_1levenshtein_ed
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_seq2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_long", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 22; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_long", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_edit_distance_long") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 22; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_edit_distance_long") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -828,7 +816,7 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_1levenshtein_ed
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_long", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 22; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_long", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("kaldi_edit_distance._edit_distance.levenshtein_edit_distance_long", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -853,27 +841,27 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_levenshtein_edi
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("levenshtein_edit_distance_long", 0);
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":23
+  /* "kaldi_edit_distance/_edit_distance.pyx":22
  * 
  * def levenshtein_edit_distance_long(seq1, seq2):
  *     cdef vector[long] vseq1 = seq1             # <<<<<<<<<<<<<<
  *     cdef vector[long] vseq2 = seq2
  *     return LevenshteinEditDistance[long](vseq1, vseq2)
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_long(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 23; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_long(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 22; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq1 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":24
+  /* "kaldi_edit_distance/_edit_distance.pyx":23
  * def levenshtein_edit_distance_long(seq1, seq2):
  *     cdef vector[long] vseq1 = seq1
  *     cdef vector[long] vseq2 = seq2             # <<<<<<<<<<<<<<
  *     return LevenshteinEditDistance[long](vseq1, vseq2)
  * 
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_long(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 24; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_long(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 23; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq2 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":25
+  /* "kaldi_edit_distance/_edit_distance.pyx":24
  *     cdef vector[long] vseq1 = seq1
  *     cdef vector[long] vseq2 = seq2
  *     return LevenshteinEditDistance[long](vseq1, vseq2)             # <<<<<<<<<<<<<<
@@ -881,13 +869,13 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_levenshtein_edi
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyInt_From_int(kaldi::LevenshteinEditDistance<long>(__pyx_v_vseq1, __pyx_v_vseq2)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 25; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyInt_From_int(kaldi::LevenshteinEditDistance<long>(__pyx_v_vseq1, __pyx_v_vseq2)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 24; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":22
+  /* "kaldi_edit_distance/_edit_distance.pyx":21
  * 
  * 
  * def levenshtein_edit_distance_long(seq1, seq2):             # <<<<<<<<<<<<<<
@@ -906,7 +894,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_levenshtein_edi
   return __pyx_r;
 }
 
-/* "kaldi_edit_distance/_edit_distance.pyx":28
+/* "kaldi_edit_distance/_edit_distance.pyx":27
  * 
  * 
  * def levenshtein_edit_distance_double(seq1, seq2):             # <<<<<<<<<<<<<<
@@ -946,11 +934,11 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_3levenshtein_ed
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_seq2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_double", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_double", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 27; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_edit_distance_double") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_edit_distance_double") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 27; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -963,7 +951,7 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_3levenshtein_ed
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_double", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_double", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 27; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("kaldi_edit_distance._edit_distance.levenshtein_edit_distance_double", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -988,27 +976,27 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_2levenshtein_ed
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("levenshtein_edit_distance_double", 0);
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":29
+  /* "kaldi_edit_distance/_edit_distance.pyx":28
  * 
  * def levenshtein_edit_distance_double(seq1, seq2):
  *     cdef vector[double] vseq1 = seq1             # <<<<<<<<<<<<<<
  *     cdef vector[double] vseq2 = seq2
  *     return LevenshteinEditDistance[double](vseq1, vseq2)
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 29; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq1 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":30
+  /* "kaldi_edit_distance/_edit_distance.pyx":29
  * def levenshtein_edit_distance_double(seq1, seq2):
  *     cdef vector[double] vseq1 = seq1
  *     cdef vector[double] vseq2 = seq2             # <<<<<<<<<<<<<<
  *     return LevenshteinEditDistance[double](vseq1, vseq2)
  * 
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 30; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 29; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq2 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":31
+  /* "kaldi_edit_distance/_edit_distance.pyx":30
  *     cdef vector[double] vseq1 = seq1
  *     cdef vector[double] vseq2 = seq2
  *     return LevenshteinEditDistance[double](vseq1, vseq2)             # <<<<<<<<<<<<<<
@@ -1016,13 +1004,13 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_2levenshtein_ed
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyInt_From_int(kaldi::LevenshteinEditDistance<double>(__pyx_v_vseq1, __pyx_v_vseq2)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 31; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyInt_From_int(kaldi::LevenshteinEditDistance<double>(__pyx_v_vseq1, __pyx_v_vseq2)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 30; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":28
+  /* "kaldi_edit_distance/_edit_distance.pyx":27
  * 
  * 
  * def levenshtein_edit_distance_double(seq1, seq2):             # <<<<<<<<<<<<<<
@@ -1041,7 +1029,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_2levenshtein_ed
   return __pyx_r;
 }
 
-/* "kaldi_edit_distance/_edit_distance.pyx":34
+/* "kaldi_edit_distance/_edit_distance.pyx":33
  * 
  * 
  * def levenshtein_edit_distance_bytes(seq1, seq2):             # <<<<<<<<<<<<<<
@@ -1081,11 +1069,11 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_5levenshtein_ed
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_seq2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_bytes", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_bytes", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_edit_distance_bytes") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_edit_distance_bytes") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1098,7 +1086,7 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_5levenshtein_ed
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_bytes", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_bytes", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("kaldi_edit_distance._edit_distance.levenshtein_edit_distance_bytes", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1123,27 +1111,27 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_4levenshtein_ed
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("levenshtein_edit_distance_bytes", 0);
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":35
+  /* "kaldi_edit_distance/_edit_distance.pyx":34
  * 
  * def levenshtein_edit_distance_bytes(seq1, seq2):
  *     cdef vector[string] vseq1 = seq1             # <<<<<<<<<<<<<<
  *     cdef vector[string] vseq2 = seq2
  *     return LevenshteinEditDistance[string](vseq1, vseq2)
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_string(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 35; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_string(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq1 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":36
+  /* "kaldi_edit_distance/_edit_distance.pyx":35
  * def levenshtein_edit_distance_bytes(seq1, seq2):
  *     cdef vector[string] vseq1 = seq1
  *     cdef vector[string] vseq2 = seq2             # <<<<<<<<<<<<<<
  *     return LevenshteinEditDistance[string](vseq1, vseq2)
  * 
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_string(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_string(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 35; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq2 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":37
+  /* "kaldi_edit_distance/_edit_distance.pyx":36
  *     cdef vector[string] vseq1 = seq1
  *     cdef vector[string] vseq2 = seq2
  *     return LevenshteinEditDistance[string](vseq1, vseq2)             # <<<<<<<<<<<<<<
@@ -1151,13 +1139,13 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_4levenshtein_ed
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyInt_From_int(kaldi::LevenshteinEditDistance<std::string>(__pyx_v_vseq1, __pyx_v_vseq2)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 37; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyInt_From_int(kaldi::LevenshteinEditDistance<std::string>(__pyx_v_vseq1, __pyx_v_vseq2)); if (unlikely(!__pyx_t_2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 36; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":34
+  /* "kaldi_edit_distance/_edit_distance.pyx":33
  * 
  * 
  * def levenshtein_edit_distance_bytes(seq1, seq2):             # <<<<<<<<<<<<<<
@@ -1176,7 +1164,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_4levenshtein_ed
   return __pyx_r;
 }
 
-/* "kaldi_edit_distance/_edit_distance.pyx":40
+/* "kaldi_edit_distance/_edit_distance.pyx":39
  * 
  * 
  * def levenshtein_edit_distance_detail_long(seq1, seq2):             # <<<<<<<<<<<<<<
@@ -1216,11 +1204,11 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_7levenshtein_ed
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_seq2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_detail_long", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 40; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_detail_long", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 39; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_edit_distance_detail_long") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 40; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_edit_distance_detail_long") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 39; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1233,7 +1221,7 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_7levenshtein_ed
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_detail_long", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 40; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_detail_long", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 39; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("kaldi_edit_distance._edit_distance.levenshtein_edit_distance_detail_long", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1268,27 +1256,27 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_6levenshtein_ed
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("levenshtein_edit_distance_detail_long", 0);
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":41
+  /* "kaldi_edit_distance/_edit_distance.pyx":40
  * 
  * def levenshtein_edit_distance_detail_long(seq1, seq2):
  *     cdef vector[long] vseq1 = seq1             # <<<<<<<<<<<<<<
  *     cdef vector[long] vseq2 = seq2
  *     cdef int* ins = [-1]
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_long(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 41; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_long(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 40; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq1 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":42
+  /* "kaldi_edit_distance/_edit_distance.pyx":41
  * def levenshtein_edit_distance_detail_long(seq1, seq2):
  *     cdef vector[long] vseq1 = seq1
  *     cdef vector[long] vseq2 = seq2             # <<<<<<<<<<<<<<
  *     cdef int* ins = [-1]
  *     cdef int* _del = [-1]
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_long(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 42; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_long(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 41; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq2 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":43
+  /* "kaldi_edit_distance/_edit_distance.pyx":42
  *     cdef vector[long] vseq1 = seq1
  *     cdef vector[long] vseq2 = seq2
  *     cdef int* ins = [-1]             # <<<<<<<<<<<<<<
@@ -1298,7 +1286,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_6levenshtein_ed
   __pyx_t_2[0] = -1;
   __pyx_v_ins = __pyx_t_2;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":44
+  /* "kaldi_edit_distance/_edit_distance.pyx":43
  *     cdef vector[long] vseq2 = seq2
  *     cdef int* ins = [-1]
  *     cdef int* _del = [-1]             # <<<<<<<<<<<<<<
@@ -1308,7 +1296,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_6levenshtein_ed
   __pyx_t_3[0] = -1;
   __pyx_v__del = __pyx_t_3;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":45
+  /* "kaldi_edit_distance/_edit_distance.pyx":44
  *     cdef int* ins = [-1]
  *     cdef int* _del = [-1]
  *     cdef int* sub = [-1]             # <<<<<<<<<<<<<<
@@ -1318,19 +1306,19 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_6levenshtein_ed
   __pyx_t_4[0] = -1;
   __pyx_v_sub = __pyx_t_4;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":46
+  /* "kaldi_edit_distance/_edit_distance.pyx":45
  *     cdef int* _del = [-1]
  *     cdef int* sub = [-1]
  *     total = LevenshteinEditDistance[long](vseq1, vseq2, ins, _del, sub)             # <<<<<<<<<<<<<<
  *     return total, ins[0], _del[0], sub[0],
  * 
  */
-  __pyx_t_5 = __Pyx_PyInt_From_int(kaldi::LevenshteinEditDistance<long>(__pyx_v_vseq1, __pyx_v_vseq2, __pyx_v_ins, __pyx_v__del, __pyx_v_sub)); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 46; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_5 = __Pyx_PyInt_From_int(kaldi::LevenshteinEditDistance<long>(__pyx_v_vseq1, __pyx_v_vseq2, __pyx_v_ins, __pyx_v__del, __pyx_v_sub)); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 45; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_v_total = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":47
+  /* "kaldi_edit_distance/_edit_distance.pyx":46
  *     cdef int* sub = [-1]
  *     total = LevenshteinEditDistance[long](vseq1, vseq2, ins, _del, sub)
  *     return total, ins[0], _del[0], sub[0],             # <<<<<<<<<<<<<<
@@ -1338,13 +1326,13 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_6levenshtein_ed
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_5 = __Pyx_PyInt_From_int((__pyx_v_ins[0])); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 47; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_5 = __Pyx_PyInt_From_int((__pyx_v_ins[0])); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 46; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyInt_From_int((__pyx_v__del[0])); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 47; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_6 = __Pyx_PyInt_From_int((__pyx_v__del[0])); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 46; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __Pyx_PyInt_From_int((__pyx_v_sub[0])); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 47; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_7 = __Pyx_PyInt_From_int((__pyx_v_sub[0])); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 46; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_8 = PyTuple_New(4); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 47; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_8 = PyTuple_New(4); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 46; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_INCREF(__pyx_v_total);
   __Pyx_GIVEREF(__pyx_v_total);
@@ -1362,7 +1350,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_6levenshtein_ed
   __pyx_t_8 = 0;
   goto __pyx_L0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":40
+  /* "kaldi_edit_distance/_edit_distance.pyx":39
  * 
  * 
  * def levenshtein_edit_distance_detail_long(seq1, seq2):             # <<<<<<<<<<<<<<
@@ -1385,7 +1373,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_6levenshtein_ed
   return __pyx_r;
 }
 
-/* "kaldi_edit_distance/_edit_distance.pyx":50
+/* "kaldi_edit_distance/_edit_distance.pyx":49
  * 
  * 
  * def levenshtein_edit_distance_detail_double(seq1, seq2):             # <<<<<<<<<<<<<<
@@ -1425,11 +1413,11 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_9levenshtein_ed
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_seq2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_detail_double", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_detail_double", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 49; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_edit_distance_detail_double") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_edit_distance_detail_double") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 49; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1442,7 +1430,7 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_9levenshtein_ed
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_detail_double", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_detail_double", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 49; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("kaldi_edit_distance._edit_distance.levenshtein_edit_distance_detail_double", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1477,27 +1465,27 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_8levenshtein_ed
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("levenshtein_edit_distance_detail_double", 0);
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":51
+  /* "kaldi_edit_distance/_edit_distance.pyx":50
  * 
  * def levenshtein_edit_distance_detail_double(seq1, seq2):
  *     cdef vector[double] vseq1 = seq1             # <<<<<<<<<<<<<<
  *     cdef vector[double] vseq2 = seq2
  *     cdef int* ins = [-1]
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 51; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq1 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":52
+  /* "kaldi_edit_distance/_edit_distance.pyx":51
  * def levenshtein_edit_distance_detail_double(seq1, seq2):
  *     cdef vector[double] vseq1 = seq1
  *     cdef vector[double] vseq2 = seq2             # <<<<<<<<<<<<<<
  *     cdef int* ins = [-1]
  *     cdef int* _del = [-1]
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 52; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 51; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq2 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":53
+  /* "kaldi_edit_distance/_edit_distance.pyx":52
  *     cdef vector[double] vseq1 = seq1
  *     cdef vector[double] vseq2 = seq2
  *     cdef int* ins = [-1]             # <<<<<<<<<<<<<<
@@ -1507,7 +1495,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_8levenshtein_ed
   __pyx_t_2[0] = -1;
   __pyx_v_ins = __pyx_t_2;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":54
+  /* "kaldi_edit_distance/_edit_distance.pyx":53
  *     cdef vector[double] vseq2 = seq2
  *     cdef int* ins = [-1]
  *     cdef int* _del = [-1]             # <<<<<<<<<<<<<<
@@ -1517,7 +1505,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_8levenshtein_ed
   __pyx_t_3[0] = -1;
   __pyx_v__del = __pyx_t_3;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":55
+  /* "kaldi_edit_distance/_edit_distance.pyx":54
  *     cdef int* ins = [-1]
  *     cdef int* _del = [-1]
  *     cdef int* sub = [-1]             # <<<<<<<<<<<<<<
@@ -1527,19 +1515,19 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_8levenshtein_ed
   __pyx_t_4[0] = -1;
   __pyx_v_sub = __pyx_t_4;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":56
+  /* "kaldi_edit_distance/_edit_distance.pyx":55
  *     cdef int* _del = [-1]
  *     cdef int* sub = [-1]
  *     total = LevenshteinEditDistance[double](vseq1, vseq2, ins, _del, sub)             # <<<<<<<<<<<<<<
  *     return total, ins[0], _del[0], sub[0],
  * 
  */
-  __pyx_t_5 = __Pyx_PyInt_From_int(kaldi::LevenshteinEditDistance<double>(__pyx_v_vseq1, __pyx_v_vseq2, __pyx_v_ins, __pyx_v__del, __pyx_v_sub)); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 56; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_5 = __Pyx_PyInt_From_int(kaldi::LevenshteinEditDistance<double>(__pyx_v_vseq1, __pyx_v_vseq2, __pyx_v_ins, __pyx_v__del, __pyx_v_sub)); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 55; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_v_total = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":57
+  /* "kaldi_edit_distance/_edit_distance.pyx":56
  *     cdef int* sub = [-1]
  *     total = LevenshteinEditDistance[double](vseq1, vseq2, ins, _del, sub)
  *     return total, ins[0], _del[0], sub[0],             # <<<<<<<<<<<<<<
@@ -1547,13 +1535,13 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_8levenshtein_ed
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_5 = __Pyx_PyInt_From_int((__pyx_v_ins[0])); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 57; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_5 = __Pyx_PyInt_From_int((__pyx_v_ins[0])); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 56; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyInt_From_int((__pyx_v__del[0])); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 57; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_6 = __Pyx_PyInt_From_int((__pyx_v__del[0])); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 56; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __Pyx_PyInt_From_int((__pyx_v_sub[0])); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 57; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_7 = __Pyx_PyInt_From_int((__pyx_v_sub[0])); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 56; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_8 = PyTuple_New(4); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 57; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_8 = PyTuple_New(4); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 56; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_INCREF(__pyx_v_total);
   __Pyx_GIVEREF(__pyx_v_total);
@@ -1571,7 +1559,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_8levenshtein_ed
   __pyx_t_8 = 0;
   goto __pyx_L0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":50
+  /* "kaldi_edit_distance/_edit_distance.pyx":49
  * 
  * 
  * def levenshtein_edit_distance_detail_double(seq1, seq2):             # <<<<<<<<<<<<<<
@@ -1594,7 +1582,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_8levenshtein_ed
   return __pyx_r;
 }
 
-/* "kaldi_edit_distance/_edit_distance.pyx":60
+/* "kaldi_edit_distance/_edit_distance.pyx":59
  * 
  * 
  * def levenshtein_edit_distance_detail_bytes(seq1, seq2):             # <<<<<<<<<<<<<<
@@ -1634,11 +1622,11 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_11levenshtein_e
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_seq2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_detail_bytes", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_detail_bytes", 1, 2, 2, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_edit_distance_detail_bytes") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_edit_distance_detail_bytes") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -1651,7 +1639,7 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_11levenshtein_e
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_detail_bytes", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("levenshtein_edit_distance_detail_bytes", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("kaldi_edit_distance._edit_distance.levenshtein_edit_distance_detail_bytes", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1686,27 +1674,27 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_10levenshtein_e
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("levenshtein_edit_distance_detail_bytes", 0);
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":61
+  /* "kaldi_edit_distance/_edit_distance.pyx":60
  * 
  * def levenshtein_edit_distance_detail_bytes(seq1, seq2):
  *     cdef vector[string] vseq1 = seq1             # <<<<<<<<<<<<<<
  *     cdef vector[string] vseq2 = seq2
  *     cdef int* ins = [-1]
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_string(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_string(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq1 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":62
+  /* "kaldi_edit_distance/_edit_distance.pyx":61
  * def levenshtein_edit_distance_detail_bytes(seq1, seq2):
  *     cdef vector[string] vseq1 = seq1
  *     cdef vector[string] vseq2 = seq2             # <<<<<<<<<<<<<<
  *     cdef int* ins = [-1]
  *     cdef int* _del = [-1]
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_string(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 62; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_string(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 61; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq2 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":63
+  /* "kaldi_edit_distance/_edit_distance.pyx":62
  *     cdef vector[string] vseq1 = seq1
  *     cdef vector[string] vseq2 = seq2
  *     cdef int* ins = [-1]             # <<<<<<<<<<<<<<
@@ -1716,7 +1704,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_10levenshtein_e
   __pyx_t_2[0] = -1;
   __pyx_v_ins = __pyx_t_2;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":64
+  /* "kaldi_edit_distance/_edit_distance.pyx":63
  *     cdef vector[string] vseq2 = seq2
  *     cdef int* ins = [-1]
  *     cdef int* _del = [-1]             # <<<<<<<<<<<<<<
@@ -1726,7 +1714,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_10levenshtein_e
   __pyx_t_3[0] = -1;
   __pyx_v__del = __pyx_t_3;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":65
+  /* "kaldi_edit_distance/_edit_distance.pyx":64
  *     cdef int* ins = [-1]
  *     cdef int* _del = [-1]
  *     cdef int* sub = [-1]             # <<<<<<<<<<<<<<
@@ -1736,19 +1724,19 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_10levenshtein_e
   __pyx_t_4[0] = -1;
   __pyx_v_sub = __pyx_t_4;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":66
+  /* "kaldi_edit_distance/_edit_distance.pyx":65
  *     cdef int* _del = [-1]
  *     cdef int* sub = [-1]
  *     total = LevenshteinEditDistance[string](vseq1, vseq2, ins, _del, sub)             # <<<<<<<<<<<<<<
  *     return total, ins[0], _del[0], sub[0],
  * 
  */
-  __pyx_t_5 = __Pyx_PyInt_From_int(kaldi::LevenshteinEditDistance<std::string>(__pyx_v_vseq1, __pyx_v_vseq2, __pyx_v_ins, __pyx_v__del, __pyx_v_sub)); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_5 = __Pyx_PyInt_From_int(kaldi::LevenshteinEditDistance<std::string>(__pyx_v_vseq1, __pyx_v_vseq2, __pyx_v_ins, __pyx_v__del, __pyx_v_sub)); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 65; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_v_total = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":67
+  /* "kaldi_edit_distance/_edit_distance.pyx":66
  *     cdef int* sub = [-1]
  *     total = LevenshteinEditDistance[string](vseq1, vseq2, ins, _del, sub)
  *     return total, ins[0], _del[0], sub[0],             # <<<<<<<<<<<<<<
@@ -1756,13 +1744,13 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_10levenshtein_e
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_5 = __Pyx_PyInt_From_int((__pyx_v_ins[0])); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_5 = __Pyx_PyInt_From_int((__pyx_v_ins[0])); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyInt_From_int((__pyx_v__del[0])); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_6 = __Pyx_PyInt_From_int((__pyx_v__del[0])); if (unlikely(!__pyx_t_6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __Pyx_PyInt_From_int((__pyx_v_sub[0])); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_7 = __Pyx_PyInt_From_int((__pyx_v_sub[0])); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_8 = PyTuple_New(4); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 67; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_8 = PyTuple_New(4); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 66; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_INCREF(__pyx_v_total);
   __Pyx_GIVEREF(__pyx_v_total);
@@ -1780,7 +1768,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_10levenshtein_e
   __pyx_t_8 = 0;
   goto __pyx_L0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":60
+  /* "kaldi_edit_distance/_edit_distance.pyx":59
  * 
  * 
  * def levenshtein_edit_distance_detail_bytes(seq1, seq2):             # <<<<<<<<<<<<<<
@@ -1803,7 +1791,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_10levenshtein_e
   return __pyx_r;
 }
 
-/* "kaldi_edit_distance/_edit_distance.pyx":70
+/* "kaldi_edit_distance/_edit_distance.pyx":69
  * 
  * 
  * def levenshtein_alignment_long(seq1, seq2, eps_symbol):             # <<<<<<<<<<<<<<
@@ -1845,16 +1833,16 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_13levenshtein_a
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_seq2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_long", 1, 3, 3, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_long", 1, 3, 3, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_eps_symbol)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_long", 1, 3, 3, 2); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_long", 1, 3, 3, 2); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_alignment_long") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_alignment_long") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -1869,7 +1857,7 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_13levenshtein_a
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_long", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_long", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("kaldi_edit_distance._edit_distance.levenshtein_alignment_long", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -1900,65 +1888,65 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_12levenshtein_a
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("levenshtein_alignment_long", 0);
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":71
+  /* "kaldi_edit_distance/_edit_distance.pyx":70
  * 
  * def levenshtein_alignment_long(seq1, seq2, eps_symbol):
  *     cdef vector[long] vseq1 = seq1             # <<<<<<<<<<<<<<
  *     cdef vector[long] vseq2 = seq2
  *     cdef long _eps_symbol = eps_symbol
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_long(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_long(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq1 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":72
+  /* "kaldi_edit_distance/_edit_distance.pyx":71
  * def levenshtein_alignment_long(seq1, seq2, eps_symbol):
  *     cdef vector[long] vseq1 = seq1
  *     cdef vector[long] vseq2 = seq2             # <<<<<<<<<<<<<<
  *     cdef long _eps_symbol = eps_symbol
  *     cdef vector[pair[long, long]] output = [(-1, -1)]
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_long(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 72; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_long(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 71; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq2 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":73
+  /* "kaldi_edit_distance/_edit_distance.pyx":72
  *     cdef vector[long] vseq1 = seq1
  *     cdef vector[long] vseq2 = seq2
  *     cdef long _eps_symbol = eps_symbol             # <<<<<<<<<<<<<<
  *     cdef vector[pair[long, long]] output = [(-1, -1)]
  *     total = LevenshteinAlignment[long](vseq1, vseq2, _eps_symbol, &output)
  */
-  __pyx_t_2 = __Pyx_PyInt_As_long(__pyx_v_eps_symbol); if (unlikely((__pyx_t_2 == (long)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __Pyx_PyInt_As_long(__pyx_v_eps_symbol); if (unlikely((__pyx_t_2 == (long)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 72; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v__eps_symbol = __pyx_t_2;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":74
+  /* "kaldi_edit_distance/_edit_distance.pyx":73
  *     cdef vector[long] vseq2 = seq2
  *     cdef long _eps_symbol = eps_symbol
  *     cdef vector[pair[long, long]] output = [(-1, -1)]             # <<<<<<<<<<<<<<
  *     total = LevenshteinAlignment[long](vseq1, vseq2, _eps_symbol, &output)
  *     return total, output
  */
-  __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
   PyList_SET_ITEM(__pyx_t_3, 0, __pyx_tuple_);
-  __pyx_t_4 = __pyx_convert_vector_from_py_std_3a__3a_pair_3c_long_2c_long_3e___(__pyx_t_3); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __pyx_convert_vector_from_py_std_3a__3a_pair_3c_long_2c_long_3e___(__pyx_t_3); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_output = __pyx_t_4;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":75
+  /* "kaldi_edit_distance/_edit_distance.pyx":74
  *     cdef long _eps_symbol = eps_symbol
  *     cdef vector[pair[long, long]] output = [(-1, -1)]
  *     total = LevenshteinAlignment[long](vseq1, vseq2, _eps_symbol, &output)             # <<<<<<<<<<<<<<
  *     return total, output
  * 
  */
-  __pyx_t_3 = __Pyx_PyInt_From_int(kaldi::LevenshteinAlignment<long>(__pyx_v_vseq1, __pyx_v_vseq2, __pyx_v__eps_symbol, (&__pyx_v_output))); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_PyInt_From_int(kaldi::LevenshteinAlignment<long>(__pyx_v_vseq1, __pyx_v_vseq2, __pyx_v__eps_symbol, (&__pyx_v_output))); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_v_total = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":76
+  /* "kaldi_edit_distance/_edit_distance.pyx":75
  *     cdef vector[pair[long, long]] output = [(-1, -1)]
  *     total = LevenshteinAlignment[long](vseq1, vseq2, _eps_symbol, &output)
  *     return total, output             # <<<<<<<<<<<<<<
@@ -1966,9 +1954,9 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_12levenshtein_a
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_pair_3c_long_2c_long_3e___(__pyx_v_output); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_pair_3c_long_2c_long_3e___(__pyx_v_output); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 76; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 75; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_INCREF(__pyx_v_total);
   __Pyx_GIVEREF(__pyx_v_total);
@@ -1980,7 +1968,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_12levenshtein_a
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":70
+  /* "kaldi_edit_distance/_edit_distance.pyx":69
  * 
  * 
  * def levenshtein_alignment_long(seq1, seq2, eps_symbol):             # <<<<<<<<<<<<<<
@@ -2001,7 +1989,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_12levenshtein_a
   return __pyx_r;
 }
 
-/* "kaldi_edit_distance/_edit_distance.pyx":79
+/* "kaldi_edit_distance/_edit_distance.pyx":78
  * 
  * 
  * def levenshtein_alignment_double(seq1, seq2, eps_symbol):             # <<<<<<<<<<<<<<
@@ -2043,16 +2031,16 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_15levenshtein_a
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_seq2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_double", 1, 3, 3, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_double", 1, 3, 3, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_eps_symbol)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_double", 1, 3, 3, 2); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_double", 1, 3, 3, 2); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_alignment_double") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_alignment_double") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -2067,7 +2055,7 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_15levenshtein_a
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_double", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_double", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("kaldi_edit_distance._edit_distance.levenshtein_alignment_double", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2098,65 +2086,65 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_14levenshtein_a
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("levenshtein_alignment_double", 0);
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":80
+  /* "kaldi_edit_distance/_edit_distance.pyx":79
  * 
  * def levenshtein_alignment_double(seq1, seq2, eps_symbol):
  *     cdef vector[double] vseq1 = seq1             # <<<<<<<<<<<<<<
  *     cdef vector[double] vseq2 = seq2
  *     cdef double _eps_symbol = eps_symbol
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq1 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":81
+  /* "kaldi_edit_distance/_edit_distance.pyx":80
  * def levenshtein_alignment_double(seq1, seq2, eps_symbol):
  *     cdef vector[double] vseq1 = seq1
  *     cdef vector[double] vseq2 = seq2             # <<<<<<<<<<<<<<
  *     cdef double _eps_symbol = eps_symbol
  *     cdef vector[pair[double , double]] output = [(-1., -1.)]
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 81; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_double(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 80; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq2 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":82
+  /* "kaldi_edit_distance/_edit_distance.pyx":81
  *     cdef vector[double] vseq1 = seq1
  *     cdef vector[double] vseq2 = seq2
  *     cdef double _eps_symbol = eps_symbol             # <<<<<<<<<<<<<<
  *     cdef vector[pair[double , double]] output = [(-1., -1.)]
  *     total = LevenshteinAlignment[double](vseq1, vseq2, _eps_symbol, &output)
  */
-  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_v_eps_symbol); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_v_eps_symbol); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 81; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v__eps_symbol = __pyx_t_2;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":83
+  /* "kaldi_edit_distance/_edit_distance.pyx":82
  *     cdef vector[double] vseq2 = seq2
  *     cdef double _eps_symbol = eps_symbol
  *     cdef vector[pair[double , double]] output = [(-1., -1.)]             # <<<<<<<<<<<<<<
  *     total = LevenshteinAlignment[double](vseq1, vseq2, _eps_symbol, &output)
  *     return total, output
  */
-  __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
   PyList_SET_ITEM(__pyx_t_3, 0, __pyx_tuple__2);
-  __pyx_t_4 = __pyx_convert_vector_from_py_std_3a__3a_pair_3c_double_2c_double_3e___(__pyx_t_3); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __pyx_convert_vector_from_py_std_3a__3a_pair_3c_double_2c_double_3e___(__pyx_t_3); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_output = __pyx_t_4;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":84
+  /* "kaldi_edit_distance/_edit_distance.pyx":83
  *     cdef double _eps_symbol = eps_symbol
  *     cdef vector[pair[double , double]] output = [(-1., -1.)]
  *     total = LevenshteinAlignment[double](vseq1, vseq2, _eps_symbol, &output)             # <<<<<<<<<<<<<<
  *     return total, output
  * 
  */
-  __pyx_t_3 = __Pyx_PyInt_From_int(kaldi::LevenshteinAlignment<double>(__pyx_v_vseq1, __pyx_v_vseq2, __pyx_v__eps_symbol, (&__pyx_v_output))); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_PyInt_From_int(kaldi::LevenshteinAlignment<double>(__pyx_v_vseq1, __pyx_v_vseq2, __pyx_v__eps_symbol, (&__pyx_v_output))); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_v_total = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":85
+  /* "kaldi_edit_distance/_edit_distance.pyx":84
  *     cdef vector[pair[double , double]] output = [(-1., -1.)]
  *     total = LevenshteinAlignment[double](vseq1, vseq2, _eps_symbol, &output)
  *     return total, output             # <<<<<<<<<<<<<<
@@ -2164,9 +2152,9 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_14levenshtein_a
  * 
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_pair_3c_double_2c_double_3e___(__pyx_v_output); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 85; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_pair_3c_double_2c_double_3e___(__pyx_v_output); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 85; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 84; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_INCREF(__pyx_v_total);
   __Pyx_GIVEREF(__pyx_v_total);
@@ -2178,7 +2166,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_14levenshtein_a
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":79
+  /* "kaldi_edit_distance/_edit_distance.pyx":78
  * 
  * 
  * def levenshtein_alignment_double(seq1, seq2, eps_symbol):             # <<<<<<<<<<<<<<
@@ -2199,7 +2187,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_14levenshtein_a
   return __pyx_r;
 }
 
-/* "kaldi_edit_distance/_edit_distance.pyx":88
+/* "kaldi_edit_distance/_edit_distance.pyx":87
  * 
  * 
  * def levenshtein_alignment_bytes(seq1, seq2, eps_symbol):             # <<<<<<<<<<<<<<
@@ -2241,16 +2229,16 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_17levenshtein_a
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_seq2)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_bytes", 1, 3, 3, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_bytes", 1, 3, 3, 1); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_eps_symbol)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_bytes", 1, 3, 3, 2); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+          __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_bytes", 1, 3, 3, 2); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_alignment_bytes") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "levenshtein_alignment_bytes") < 0)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -2265,7 +2253,7 @@ static PyObject *__pyx_pw_19kaldi_edit_distance_14_edit_distance_17levenshtein_a
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_bytes", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
+  __Pyx_RaiseArgtupleInvalid("levenshtein_alignment_bytes", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L3_error;}
   __pyx_L3_error:;
   __Pyx_AddTraceback("kaldi_edit_distance._edit_distance.levenshtein_alignment_bytes", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -2306,69 +2294,143 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_16levenshtein_a
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("levenshtein_alignment_bytes", 0);
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":89
+  /* "kaldi_edit_distance/_edit_distance.pyx":88
  * 
  * def levenshtein_alignment_bytes(seq1, seq2, eps_symbol):
  *     cdef vector[string] vseq1 = seq1             # <<<<<<<<<<<<<<
  *     cdef vector[string] vseq2 = seq2
  *     cdef string _eps_symbol = eps_symbol
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_string(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_string(__pyx_v_seq1); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq1 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":90
+  /* "kaldi_edit_distance/_edit_distance.pyx":89
  * def levenshtein_alignment_bytes(seq1, seq2, eps_symbol):
  *     cdef vector[string] vseq1 = seq1
  *     cdef vector[string] vseq2 = seq2             # <<<<<<<<<<<<<<
  *     cdef string _eps_symbol = eps_symbol
  *     cdef vector[pair[string, string]] output = [(b'', b'')]
  */
-  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_string(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = __pyx_convert_vector_from_py_std_3a__3a_string(__pyx_v_seq2); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 89; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v_vseq2 = __pyx_t_1;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":91
+  /* "kaldi_edit_distance/_edit_distance.pyx":90
  *     cdef vector[string] vseq1 = seq1
  *     cdef vector[string] vseq2 = seq2
  *     cdef string _eps_symbol = eps_symbol             # <<<<<<<<<<<<<<
  *     cdef vector[pair[string, string]] output = [(b'', b'')]
  *     total = LevenshteinAlignment[string](vseq1, vseq2, _eps_symbol, &output)
  */
-  __pyx_t_2 = __pyx_convert_string_from_py_std__in_string(__pyx_v_eps_symbol); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 91; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_2 = __pyx_convert_string_from_py_std__in_string(__pyx_v_eps_symbol); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 90; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __pyx_v__eps_symbol = __pyx_t_2;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":92
+  /* "kaldi_edit_distance/_edit_distance.pyx":91
  *     cdef vector[string] vseq2 = seq2
  *     cdef string _eps_symbol = eps_symbol
  *     cdef vector[pair[string, string]] output = [(b'', b'')]             # <<<<<<<<<<<<<<
  *     total = LevenshteinAlignment[string](vseq1, vseq2, _eps_symbol, &output)
  *     rseq1 = [v1 for v1, v2 in output]
  */
-  __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = PyList_New(1); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 91; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_INCREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
   PyList_SET_ITEM(__pyx_t_3, 0, __pyx_tuple__4);
-  __pyx_t_4 = __pyx_convert_vector_from_py_std_3a__3a_pair_3c_std_3a__3a_string_2c_std_3a__3a_string_3e___(__pyx_t_3); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_4 = __pyx_convert_vector_from_py_std_3a__3a_pair_3c_std_3a__3a_string_2c_std_3a__3a_string_3e___(__pyx_t_3); if (unlikely(PyErr_Occurred())) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 91; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_output = __pyx_t_4;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":93
+  /* "kaldi_edit_distance/_edit_distance.pyx":92
  *     cdef string _eps_symbol = eps_symbol
  *     cdef vector[pair[string, string]] output = [(b'', b'')]
  *     total = LevenshteinAlignment[string](vseq1, vseq2, _eps_symbol, &output)             # <<<<<<<<<<<<<<
  *     rseq1 = [v1 for v1, v2 in output]
  *     rseq2 = [v2 for v1, v2 in output]
  */
-  __pyx_t_3 = __Pyx_PyInt_From_int(kaldi::LevenshteinAlignment<std::string>(__pyx_v_vseq1, __pyx_v_vseq2, __pyx_v__eps_symbol, (&__pyx_v_output))); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __Pyx_PyInt_From_int(kaldi::LevenshteinAlignment<std::string>(__pyx_v_vseq1, __pyx_v_vseq2, __pyx_v__eps_symbol, (&__pyx_v_output))); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_v_total = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":94
+  /* "kaldi_edit_distance/_edit_distance.pyx":93
  *     cdef vector[pair[string, string]] output = [(b'', b'')]
  *     total = LevenshteinAlignment[string](vseq1, vseq2, _eps_symbol, &output)
  *     rseq1 = [v1 for v1, v2 in output]             # <<<<<<<<<<<<<<
  *     rseq2 = [v2 for v1, v2 in output]
+ *     return total, output
+ */
+  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_5 = __pyx_v_output.begin();
+  for (;;) {
+    if (!(__pyx_t_5 != __pyx_v_output.end())) break;
+    __pyx_t_6 = *__pyx_t_5;
+    ++__pyx_t_5;
+    __pyx_t_7 = __pyx_convert_pair_to_py_std_3a__3a_string____std_3a__3a_string(__pyx_t_6); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    __Pyx_GOTREF(__pyx_t_7);
+    if ((likely(PyTuple_CheckExact(__pyx_t_7))) || (PyList_CheckExact(__pyx_t_7))) {
+      PyObject* sequence = __pyx_t_7;
+      #if CYTHON_COMPILING_IN_CPYTHON
+      Py_ssize_t size = Py_SIZE(sequence);
+      #else
+      Py_ssize_t size = PySequence_Size(sequence);
+      #endif
+      if (unlikely(size != 2)) {
+        if (size > 2) __Pyx_RaiseTooManyValuesError(2);
+        else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
+        {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      }
+      #if CYTHON_COMPILING_IN_CPYTHON
+      if (likely(PyTuple_CheckExact(sequence))) {
+        __pyx_t_8 = PyTuple_GET_ITEM(sequence, 0); 
+        __pyx_t_9 = PyTuple_GET_ITEM(sequence, 1); 
+      } else {
+        __pyx_t_8 = PyList_GET_ITEM(sequence, 0); 
+        __pyx_t_9 = PyList_GET_ITEM(sequence, 1); 
+      }
+      __Pyx_INCREF(__pyx_t_8);
+      __Pyx_INCREF(__pyx_t_9);
+      #else
+      __pyx_t_8 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_8);
+      __pyx_t_9 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_9);
+      #endif
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    } else {
+      Py_ssize_t index = -1;
+      __pyx_t_10 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __Pyx_GOTREF(__pyx_t_10);
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __pyx_t_11 = Py_TYPE(__pyx_t_10)->tp_iternext;
+      index = 0; __pyx_t_8 = __pyx_t_11(__pyx_t_10); if (unlikely(!__pyx_t_8)) goto __pyx_L5_unpacking_failed;
+      __Pyx_GOTREF(__pyx_t_8);
+      index = 1; __pyx_t_9 = __pyx_t_11(__pyx_t_10); if (unlikely(!__pyx_t_9)) goto __pyx_L5_unpacking_failed;
+      __Pyx_GOTREF(__pyx_t_9);
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_11(__pyx_t_10), 2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_11 = NULL;
+      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+      goto __pyx_L6_unpacking_done;
+      __pyx_L5_unpacking_failed:;
+      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
+      __pyx_t_11 = NULL;
+      if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_L6_unpacking_done:;
+    }
+    __Pyx_XDECREF_SET(__pyx_v_v1, __pyx_t_8);
+    __pyx_t_8 = 0;
+    __Pyx_XDECREF_SET(__pyx_v_v2, __pyx_t_9);
+    __pyx_t_9 = 0;
+    if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_v_v1))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 93; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  }
+  __pyx_v_rseq1 = ((PyObject*)__pyx_t_3);
+  __pyx_t_3 = 0;
+
+  /* "kaldi_edit_distance/_edit_distance.pyx":94
+ *     total = LevenshteinAlignment[string](vseq1, vseq2, _eps_symbol, &output)
+ *     rseq1 = [v1 for v1, v2 in output]
+ *     rseq2 = [v2 for v1, v2 in output]             # <<<<<<<<<<<<<<
  *     return total, output
  */
   __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
@@ -2394,80 +2456,6 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_16levenshtein_a
       }
       #if CYTHON_COMPILING_IN_CPYTHON
       if (likely(PyTuple_CheckExact(sequence))) {
-        __pyx_t_8 = PyTuple_GET_ITEM(sequence, 0); 
-        __pyx_t_9 = PyTuple_GET_ITEM(sequence, 1); 
-      } else {
-        __pyx_t_8 = PyList_GET_ITEM(sequence, 0); 
-        __pyx_t_9 = PyList_GET_ITEM(sequence, 1); 
-      }
-      __Pyx_INCREF(__pyx_t_8);
-      __Pyx_INCREF(__pyx_t_9);
-      #else
-      __pyx_t_8 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_9 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_9);
-      #endif
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    } else {
-      Py_ssize_t index = -1;
-      __pyx_t_10 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __Pyx_GOTREF(__pyx_t_10);
-      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_11 = Py_TYPE(__pyx_t_10)->tp_iternext;
-      index = 0; __pyx_t_8 = __pyx_t_11(__pyx_t_10); if (unlikely(!__pyx_t_8)) goto __pyx_L5_unpacking_failed;
-      __Pyx_GOTREF(__pyx_t_8);
-      index = 1; __pyx_t_9 = __pyx_t_11(__pyx_t_10); if (unlikely(!__pyx_t_9)) goto __pyx_L5_unpacking_failed;
-      __Pyx_GOTREF(__pyx_t_9);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_11(__pyx_t_10), 2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __pyx_t_11 = NULL;
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      goto __pyx_L6_unpacking_done;
-      __pyx_L5_unpacking_failed:;
-      __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_11 = NULL;
-      if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      __pyx_L6_unpacking_done:;
-    }
-    __Pyx_XDECREF_SET(__pyx_v_v1, __pyx_t_8);
-    __pyx_t_8 = 0;
-    __Pyx_XDECREF_SET(__pyx_v_v2, __pyx_t_9);
-    __pyx_t_9 = 0;
-    if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_v_v1))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  }
-  __pyx_v_rseq1 = ((PyObject*)__pyx_t_3);
-  __pyx_t_3 = 0;
-
-  /* "kaldi_edit_distance/_edit_distance.pyx":95
- *     total = LevenshteinAlignment[string](vseq1, vseq2, _eps_symbol, &output)
- *     rseq1 = [v1 for v1, v2 in output]
- *     rseq2 = [v2 for v1, v2 in output]             # <<<<<<<<<<<<<<
- *     return total, output
- */
-  __pyx_t_3 = PyList_New(0); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __pyx_v_output.begin();
-  for (;;) {
-    if (!(__pyx_t_5 != __pyx_v_output.end())) break;
-    __pyx_t_6 = *__pyx_t_5;
-    ++__pyx_t_5;
-    __pyx_t_7 = __pyx_convert_pair_to_py_std_3a__3a_string____std_3a__3a_string(__pyx_t_6); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-    __Pyx_GOTREF(__pyx_t_7);
-    if ((likely(PyTuple_CheckExact(__pyx_t_7))) || (PyList_CheckExact(__pyx_t_7))) {
-      PyObject* sequence = __pyx_t_7;
-      #if CYTHON_COMPILING_IN_CPYTHON
-      Py_ssize_t size = Py_SIZE(sequence);
-      #else
-      Py_ssize_t size = PySequence_Size(sequence);
-      #endif
-      if (unlikely(size != 2)) {
-        if (size > 2) __Pyx_RaiseTooManyValuesError(2);
-        else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
-      }
-      #if CYTHON_COMPILING_IN_CPYTHON
-      if (likely(PyTuple_CheckExact(sequence))) {
         __pyx_t_9 = PyTuple_GET_ITEM(sequence, 0); 
         __pyx_t_8 = PyTuple_GET_ITEM(sequence, 1); 
       } else {
@@ -2477,15 +2465,15 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_16levenshtein_a
       __Pyx_INCREF(__pyx_t_9);
       __Pyx_INCREF(__pyx_t_8);
       #else
-      __pyx_t_9 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_9 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_9);
-      __pyx_t_8 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_8 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_8);
       #endif
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_10 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      __pyx_t_10 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __pyx_t_11 = Py_TYPE(__pyx_t_10)->tp_iternext;
@@ -2493,7 +2481,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_16levenshtein_a
       __Pyx_GOTREF(__pyx_t_9);
       index = 1; __pyx_t_8 = __pyx_t_11(__pyx_t_10); if (unlikely(!__pyx_t_8)) goto __pyx_L9_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_8);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_11(__pyx_t_10), 2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_11(__pyx_t_10), 2) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __pyx_t_11 = NULL;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       goto __pyx_L10_unpacking_done;
@@ -2501,27 +2489,27 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_16levenshtein_a
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __pyx_t_11 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+      {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
       __pyx_L10_unpacking_done:;
     }
     __Pyx_XDECREF_SET(__pyx_v_v1, __pyx_t_9);
     __pyx_t_9 = 0;
     __Pyx_XDECREF_SET(__pyx_v_v2, __pyx_t_8);
     __pyx_t_8 = 0;
-    if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_v_v2))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+    if (unlikely(__Pyx_ListComp_Append(__pyx_t_3, (PyObject*)__pyx_v_v2))) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 94; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   }
   __pyx_v_rseq2 = ((PyObject*)__pyx_t_3);
   __pyx_t_3 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":96
+  /* "kaldi_edit_distance/_edit_distance.pyx":95
  *     rseq1 = [v1 for v1, v2 in output]
  *     rseq2 = [v2 for v1, v2 in output]
  *     return total, output             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_pair_3c_std_3a__3a_string_2c_std_3a__3a_string_3e___(__pyx_v_output); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 96; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_3 = __pyx_convert_vector_to_py_std_3a__3a_pair_3c_std_3a__3a_string_2c_std_3a__3a_string_3e___(__pyx_v_output); if (unlikely(!__pyx_t_3)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 96; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 95; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_INCREF(__pyx_v_total);
   __Pyx_GIVEREF(__pyx_v_total);
@@ -2533,7 +2521,7 @@ static PyObject *__pyx_pf_19kaldi_edit_distance_14_edit_distance_16levenshtein_a
   __pyx_t_7 = 0;
   goto __pyx_L0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":88
+  /* "kaldi_edit_distance/_edit_distance.pyx":87
  * 
  * 
  * def levenshtein_alignment_bytes(seq1, seq2, eps_symbol):             # <<<<<<<<<<<<<<
@@ -4381,146 +4369,146 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":74
+  /* "kaldi_edit_distance/_edit_distance.pyx":73
  *     cdef vector[long] vseq2 = seq2
  *     cdef long _eps_symbol = eps_symbol
  *     cdef vector[pair[long, long]] output = [(-1, -1)]             # <<<<<<<<<<<<<<
  *     total = LevenshteinAlignment[long](vseq1, vseq2, _eps_symbol, &output)
  *     return total, output
  */
-  __pyx_tuple_ = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_neg_1); if (unlikely(!__pyx_tuple_)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 74; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple_ = PyTuple_Pack(2, __pyx_int_neg_1, __pyx_int_neg_1); if (unlikely(!__pyx_tuple_)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 73; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":83
+  /* "kaldi_edit_distance/_edit_distance.pyx":82
  *     cdef vector[double] vseq2 = seq2
  *     cdef double _eps_symbol = eps_symbol
  *     cdef vector[pair[double , double]] output = [(-1., -1.)]             # <<<<<<<<<<<<<<
  *     total = LevenshteinAlignment[double](vseq1, vseq2, _eps_symbol, &output)
  *     return total, output
  */
-  __pyx_tuple__2 = PyTuple_Pack(2, __pyx_float_neg_1_, __pyx_float_neg_1_); if (unlikely(!__pyx_tuple__2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 83; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__2 = PyTuple_Pack(2, __pyx_float_neg_1_, __pyx_float_neg_1_); if (unlikely(!__pyx_tuple__2)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 82; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__2);
   __Pyx_GIVEREF(__pyx_tuple__2);
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":92
+  /* "kaldi_edit_distance/_edit_distance.pyx":91
  *     cdef vector[string] vseq2 = seq2
  *     cdef string _eps_symbol = eps_symbol
  *     cdef vector[pair[string, string]] output = [(b'', b'')]             # <<<<<<<<<<<<<<
  *     total = LevenshteinAlignment[string](vseq1, vseq2, _eps_symbol, &output)
  *     rseq1 = [v1 for v1, v2 in output]
  */
-  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_kp_b__3, __pyx_kp_b__3); if (unlikely(!__pyx_tuple__4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 92; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__4 = PyTuple_Pack(2, __pyx_kp_b__3, __pyx_kp_b__3); if (unlikely(!__pyx_tuple__4)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 91; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__4);
   __Pyx_GIVEREF(__pyx_tuple__4);
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":22
+  /* "kaldi_edit_distance/_edit_distance.pyx":21
  * 
  * 
  * def levenshtein_edit_distance_long(seq1, seq2):             # <<<<<<<<<<<<<<
  *     cdef vector[long] vseq1 = seq1
  *     cdef vector[long] vseq2 = seq2
  */
-  __pyx_tuple__5 = PyTuple_Pack(4, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_vseq1, __pyx_n_s_vseq2); if (unlikely(!__pyx_tuple__5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 22; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__5 = PyTuple_Pack(4, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_vseq1, __pyx_n_s_vseq2); if (unlikely(!__pyx_tuple__5)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__5);
   __Pyx_GIVEREF(__pyx_tuple__5);
-  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_edit_distance_long, 22, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 22; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__5, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_edit_distance_long, 21, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":28
+  /* "kaldi_edit_distance/_edit_distance.pyx":27
  * 
  * 
  * def levenshtein_edit_distance_double(seq1, seq2):             # <<<<<<<<<<<<<<
  *     cdef vector[double] vseq1 = seq1
  *     cdef vector[double] vseq2 = seq2
  */
-  __pyx_tuple__7 = PyTuple_Pack(4, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_vseq1, __pyx_n_s_vseq2); if (unlikely(!__pyx_tuple__7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__7 = PyTuple_Pack(4, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_vseq1, __pyx_n_s_vseq2); if (unlikely(!__pyx_tuple__7)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 27; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__7);
   __Pyx_GIVEREF(__pyx_tuple__7);
-  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_edit_distance_double, 28, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__8 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__7, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_edit_distance_double, 27, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__8)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 27; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":34
+  /* "kaldi_edit_distance/_edit_distance.pyx":33
  * 
  * 
  * def levenshtein_edit_distance_bytes(seq1, seq2):             # <<<<<<<<<<<<<<
  *     cdef vector[string] vseq1 = seq1
  *     cdef vector[string] vseq2 = seq2
  */
-  __pyx_tuple__9 = PyTuple_Pack(4, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_vseq1, __pyx_n_s_vseq2); if (unlikely(!__pyx_tuple__9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__9 = PyTuple_Pack(4, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_vseq1, __pyx_n_s_vseq2); if (unlikely(!__pyx_tuple__9)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
-  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_edit_distance_bytes, 34, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(2, 0, 4, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_edit_distance_bytes, 33, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":40
+  /* "kaldi_edit_distance/_edit_distance.pyx":39
  * 
  * 
  * def levenshtein_edit_distance_detail_long(seq1, seq2):             # <<<<<<<<<<<<<<
  *     cdef vector[long] vseq1 = seq1
  *     cdef vector[long] vseq2 = seq2
  */
-  __pyx_tuple__11 = PyTuple_Pack(8, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_vseq1, __pyx_n_s_vseq2, __pyx_n_s_ins, __pyx_n_s_del, __pyx_n_s_sub, __pyx_n_s_total); if (unlikely(!__pyx_tuple__11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 40; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__11 = PyTuple_Pack(8, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_vseq1, __pyx_n_s_vseq2, __pyx_n_s_ins, __pyx_n_s_del, __pyx_n_s_sub, __pyx_n_s_total); if (unlikely(!__pyx_tuple__11)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 39; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
-  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(2, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_edit_distance_detail, 40, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 40; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(2, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_edit_distance_detail, 39, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 39; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":50
+  /* "kaldi_edit_distance/_edit_distance.pyx":49
  * 
  * 
  * def levenshtein_edit_distance_detail_double(seq1, seq2):             # <<<<<<<<<<<<<<
  *     cdef vector[double] vseq1 = seq1
  *     cdef vector[double] vseq2 = seq2
  */
-  __pyx_tuple__13 = PyTuple_Pack(8, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_vseq1, __pyx_n_s_vseq2, __pyx_n_s_ins, __pyx_n_s_del, __pyx_n_s_sub, __pyx_n_s_total); if (unlikely(!__pyx_tuple__13)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__13 = PyTuple_Pack(8, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_vseq1, __pyx_n_s_vseq2, __pyx_n_s_ins, __pyx_n_s_del, __pyx_n_s_sub, __pyx_n_s_total); if (unlikely(!__pyx_tuple__13)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 49; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__13);
   __Pyx_GIVEREF(__pyx_tuple__13);
-  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(2, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_edit_distance_detail_2, 50, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(2, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_edit_distance_detail_2, 49, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 49; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":60
+  /* "kaldi_edit_distance/_edit_distance.pyx":59
  * 
  * 
  * def levenshtein_edit_distance_detail_bytes(seq1, seq2):             # <<<<<<<<<<<<<<
  *     cdef vector[string] vseq1 = seq1
  *     cdef vector[string] vseq2 = seq2
  */
-  __pyx_tuple__15 = PyTuple_Pack(8, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_vseq1, __pyx_n_s_vseq2, __pyx_n_s_ins, __pyx_n_s_del, __pyx_n_s_sub, __pyx_n_s_total); if (unlikely(!__pyx_tuple__15)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__15 = PyTuple_Pack(8, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_vseq1, __pyx_n_s_vseq2, __pyx_n_s_ins, __pyx_n_s_del, __pyx_n_s_sub, __pyx_n_s_total); if (unlikely(!__pyx_tuple__15)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__15);
   __Pyx_GIVEREF(__pyx_tuple__15);
-  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(2, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_edit_distance_detail_3, 60, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(2, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_edit_distance_detail_3, 59, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":70
+  /* "kaldi_edit_distance/_edit_distance.pyx":69
  * 
  * 
  * def levenshtein_alignment_long(seq1, seq2, eps_symbol):             # <<<<<<<<<<<<<<
  *     cdef vector[long] vseq1 = seq1
  *     cdef vector[long] vseq2 = seq2
  */
-  __pyx_tuple__17 = PyTuple_Pack(8, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_eps_symbol, __pyx_n_s_vseq1, __pyx_n_s_vseq2, __pyx_n_s_eps_symbol_2, __pyx_n_s_output, __pyx_n_s_total); if (unlikely(!__pyx_tuple__17)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__17 = PyTuple_Pack(8, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_eps_symbol, __pyx_n_s_vseq1, __pyx_n_s_vseq2, __pyx_n_s_eps_symbol_2, __pyx_n_s_output, __pyx_n_s_total); if (unlikely(!__pyx_tuple__17)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__17);
   __Pyx_GIVEREF(__pyx_tuple__17);
-  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_alignment_long, 70, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_alignment_long, 69, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":79
+  /* "kaldi_edit_distance/_edit_distance.pyx":78
  * 
  * 
  * def levenshtein_alignment_double(seq1, seq2, eps_symbol):             # <<<<<<<<<<<<<<
  *     cdef vector[double] vseq1 = seq1
  *     cdef vector[double] vseq2 = seq2
  */
-  __pyx_tuple__19 = PyTuple_Pack(8, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_eps_symbol, __pyx_n_s_vseq1, __pyx_n_s_vseq2, __pyx_n_s_eps_symbol_2, __pyx_n_s_output, __pyx_n_s_total); if (unlikely(!__pyx_tuple__19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__19 = PyTuple_Pack(8, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_eps_symbol, __pyx_n_s_vseq1, __pyx_n_s_vseq2, __pyx_n_s_eps_symbol_2, __pyx_n_s_output, __pyx_n_s_total); if (unlikely(!__pyx_tuple__19)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__19);
   __Pyx_GIVEREF(__pyx_tuple__19);
-  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__19, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_alignment_double, 79, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__19, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_alignment_double, 78, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":88
+  /* "kaldi_edit_distance/_edit_distance.pyx":87
  * 
  * 
  * def levenshtein_alignment_bytes(seq1, seq2, eps_symbol):             # <<<<<<<<<<<<<<
  *     cdef vector[string] vseq1 = seq1
  *     cdef vector[string] vseq2 = seq2
  */
-  __pyx_tuple__21 = PyTuple_Pack(12, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_eps_symbol, __pyx_n_s_vseq1, __pyx_n_s_vseq2, __pyx_n_s_eps_symbol_2, __pyx_n_s_output, __pyx_n_s_total, __pyx_n_s_rseq1, __pyx_n_s_rseq2, __pyx_n_s_v1, __pyx_n_s_v2); if (unlikely(!__pyx_tuple__21)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_tuple__21 = PyTuple_Pack(12, __pyx_n_s_seq1, __pyx_n_s_seq2, __pyx_n_s_eps_symbol, __pyx_n_s_vseq1, __pyx_n_s_vseq2, __pyx_n_s_eps_symbol_2, __pyx_n_s_output, __pyx_n_s_total, __pyx_n_s_rseq1, __pyx_n_s_rseq2, __pyx_n_s_v1, __pyx_n_s_v2); if (unlikely(!__pyx_tuple__21)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_tuple__21);
   __Pyx_GIVEREF(__pyx_tuple__21);
-  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(3, 0, 12, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_alignment_bytes, 88, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(3, 0, 12, 0, 0, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_Users_kamo_dnn_cyked_kaldi_edit, __pyx_n_s_levenshtein_alignment_bytes, 87, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -4631,112 +4619,112 @@ PyMODINIT_FUNC PyInit__edit_distance(void)
   if (__Pyx_patch_abc() < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 1; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   #endif
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":22
+  /* "kaldi_edit_distance/_edit_distance.pyx":21
  * 
  * 
  * def levenshtein_edit_distance_long(seq1, seq2):             # <<<<<<<<<<<<<<
  *     cdef vector[long] vseq1 = seq1
  *     cdef vector[long] vseq2 = seq2
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_1levenshtein_edit_distance_long, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 22; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_1levenshtein_edit_distance_long, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_edit_distance_long, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 22; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_edit_distance_long, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 21; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":28
+  /* "kaldi_edit_distance/_edit_distance.pyx":27
  * 
  * 
  * def levenshtein_edit_distance_double(seq1, seq2):             # <<<<<<<<<<<<<<
  *     cdef vector[double] vseq1 = seq1
  *     cdef vector[double] vseq2 = seq2
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_3levenshtein_edit_distance_double, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_3levenshtein_edit_distance_double, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 27; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_edit_distance_double, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 28; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_edit_distance_double, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 27; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":34
+  /* "kaldi_edit_distance/_edit_distance.pyx":33
  * 
  * 
  * def levenshtein_edit_distance_bytes(seq1, seq2):             # <<<<<<<<<<<<<<
  *     cdef vector[string] vseq1 = seq1
  *     cdef vector[string] vseq2 = seq2
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_5levenshtein_edit_distance_bytes, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_5levenshtein_edit_distance_bytes, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_edit_distance_bytes, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 34; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_edit_distance_bytes, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 33; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":40
+  /* "kaldi_edit_distance/_edit_distance.pyx":39
  * 
  * 
  * def levenshtein_edit_distance_detail_long(seq1, seq2):             # <<<<<<<<<<<<<<
  *     cdef vector[long] vseq1 = seq1
  *     cdef vector[long] vseq2 = seq2
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_7levenshtein_edit_distance_detail_long, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 40; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_7levenshtein_edit_distance_detail_long, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 39; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_edit_distance_detail, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 40; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_edit_distance_detail, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 39; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":50
+  /* "kaldi_edit_distance/_edit_distance.pyx":49
  * 
  * 
  * def levenshtein_edit_distance_detail_double(seq1, seq2):             # <<<<<<<<<<<<<<
  *     cdef vector[double] vseq1 = seq1
  *     cdef vector[double] vseq2 = seq2
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_9levenshtein_edit_distance_detail_double, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_9levenshtein_edit_distance_detail_double, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 49; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_edit_distance_detail_2, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 50; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_edit_distance_detail_2, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 49; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":60
+  /* "kaldi_edit_distance/_edit_distance.pyx":59
  * 
  * 
  * def levenshtein_edit_distance_detail_bytes(seq1, seq2):             # <<<<<<<<<<<<<<
  *     cdef vector[string] vseq1 = seq1
  *     cdef vector[string] vseq2 = seq2
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_11levenshtein_edit_distance_detail_bytes, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_11levenshtein_edit_distance_detail_bytes, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_edit_distance_detail_3, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 60; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_edit_distance_detail_3, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 59; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":70
+  /* "kaldi_edit_distance/_edit_distance.pyx":69
  * 
  * 
  * def levenshtein_alignment_long(seq1, seq2, eps_symbol):             # <<<<<<<<<<<<<<
  *     cdef vector[long] vseq1 = seq1
  *     cdef vector[long] vseq2 = seq2
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_13levenshtein_alignment_long, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_13levenshtein_alignment_long, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_alignment_long, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 70; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_alignment_long, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 69; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":79
+  /* "kaldi_edit_distance/_edit_distance.pyx":78
  * 
  * 
  * def levenshtein_alignment_double(seq1, seq2, eps_symbol):             # <<<<<<<<<<<<<<
  *     cdef vector[double] vseq1 = seq1
  *     cdef vector[double] vseq2 = seq2
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_15levenshtein_alignment_double, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_15levenshtein_alignment_double, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_alignment_double, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 79; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_alignment_double, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 78; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "kaldi_edit_distance/_edit_distance.pyx":88
+  /* "kaldi_edit_distance/_edit_distance.pyx":87
  * 
  * 
  * def levenshtein_alignment_bytes(seq1, seq2, eps_symbol):             # <<<<<<<<<<<<<<
  *     cdef vector[string] vseq1 = seq1
  *     cdef vector[string] vseq2 = seq2
  */
-  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_17levenshtein_alignment_bytes, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  __pyx_t_1 = PyCFunction_NewEx(&__pyx_mdef_19kaldi_edit_distance_14_edit_distance_17levenshtein_alignment_bytes, NULL, __pyx_n_s_kaldi_edit_distance__edit_distan); if (unlikely(!__pyx_t_1)) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_alignment_bytes, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 88; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_levenshtein_alignment_bytes, __pyx_t_1) < 0) {__pyx_filename = __pyx_f[0]; __pyx_lineno = 87; __pyx_clineno = __LINE__; goto __pyx_L1_error;}
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "kaldi_edit_distance/_edit_distance.pyx":1

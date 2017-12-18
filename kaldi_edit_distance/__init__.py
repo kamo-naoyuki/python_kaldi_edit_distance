@@ -6,8 +6,9 @@ import sys
 from . import _edit_distance as ed
 
 
-ErrorStats = namedtuple('ErrorStats',
-                        ['total_cost', 'ins_num', 'del_num', 'sub_num'])
+EditDistanceStats = namedtuple('EditDistanceStats',
+                               ['cost',
+                                'insertion', 'deletion', 'substitution'])
 
 
 def _get_seqs(seq1, seq2, return_map=False):
@@ -42,7 +43,7 @@ def _get_seqs(seq1, seq2, return_map=False):
 def levenshtein_edit_distance(seq1, seq2, detail=False):
     """
 
-    (This description comes from kaldi/src/util/edit-distance-inl.h)
+    (This description was moved from kaldi/src/util/edit-distance-inl.h)
 
     Copyright 2009-2011  Microsoft Corporation;  Haihua Xu;  Yanmin Qian
 
@@ -81,7 +82,7 @@ def levenshtein_edit_distance(seq1, seq2, detail=False):
         seq1 (List[T]):
         detail (bool):
     Returns:
-        ret (Union[ErrorStats, int])
+        ret (Union[EditDistanceStats, int])
     """
     if not isinstance(detail, bool):
         raise TypeError('details arg must have bool type')
@@ -89,13 +90,13 @@ def levenshtein_edit_distance(seq1, seq2, detail=False):
 
     if isinstance(ele, int):
         if detail:
-            return ErrorStats(
+            return EditDistanceStats(
                 *ed.levenshtein_edit_distance_detail_long(seq1, seq2))
         else:
             return ed.levenshtein_edit_distance_long(seq1, seq2)
     elif isinstance(ele, float):
         if detail:
-            return ErrorStats(
+            return EditDistanceStats(
                 *ed.levenshtein_edit_distance_detail_double(seq1, seq2))
         else:
             return ed.levenshtein_edit_distance_double(seq1, seq2)
@@ -104,7 +105,7 @@ def levenshtein_edit_distance(seq1, seq2, detail=False):
             seq1 = [i.encode() for i in seq1]
             seq2 = [i.encode() for i in seq2]
         if detail:
-            return ErrorStats(
+            return EditDistanceStats(
                 *ed.levenshtein_edit_distance_detail_bytes(seq1, seq2))
         else:
             return ed.levenshtein_edit_distance_bytes(seq1, seq2)

@@ -6,17 +6,16 @@ from libcpp.string cimport string
 from libcpp.pair cimport pair
 
 
-ctypedef int int32
-cdef extern from "util/edit-distance-inl.h" namespace "kaldi":
-    int32 LevenshteinEditDistance[T](const vector[T] &a,
-                                     const vector[T] &b)
-    int32 LevenshteinEditDistance[T](const vector[T] &ref,
+cdef extern from "edit-distance-inl.h" namespace "kaldi":
+    int LevenshteinEditDistance[T](const vector[T] &a,
+                                   const vector[T] &b)
+    int LevenshteinEditDistance[T](const vector[T] &ref,
                                      const vector[T] &hyp,
-                                     int32 *ins, int32 *_del, int32 *sub)
-    int32 LevenshteinAlignment[T](const vector[T] &a,
-                                  const vector[T] &b,
-                                  T eps_symbol,
-                                  vector[pair[T, T] ] *output)
+                                     int *ins, int *_del, int *sub)
+    int LevenshteinAlignment[T](const vector[T] &a,
+                                const vector[T] &b,
+                                T eps_symbol,
+                                vector[pair[T, T] ] *output)
 
 
 def levenshtein_edit_distance_long(seq1, seq2):

@@ -19,14 +19,20 @@
 
 #ifndef KALDI_UTIL_EDIT_DISTANCE_INL_H_
 #define KALDI_UTIL_EDIT_DISTANCE_INL_H_
-// #include <algorithm>
-// #include <utility>
 #include <vector>
-#include "base/kaldi-types.h"
-#include "base/kaldi-error.h"
-
 
 namespace kaldi {
+
+//  (Moved from base/kaldi-error.h)
+/// Reverses the contents of a vector.
+void KaldiAssertFailure_(const char *func, const char *file,
+                         int32_t line, const char *cond_str);
+#ifndef NDEBUG
+#define KALDI_ASSERT(cond) do { if (cond) (void)0; else \
+  ::kaldi::KaldiAssertFailure_(__func__, __FILE__, __LINE__, #cond); } while(0)
+#else
+#define KALDI_ASSERT(cond) (void)0
+#endif
 
 //  (Moved from util/stl-utils.h)
 /// Reverses the contents of a vector.
@@ -38,9 +44,10 @@ inline void ReverseVector(std::vector<T> *vec) {
     std::swap( (*vec)[i], (*vec)[sz-1-i]);
 }
 
+
 template<class T>
-int32 LevenshteinEditDistance(const std::vector<T> &a,
-                              const std::vector<T> &b) {
+int32_t LevenshteinEditDistance(const std::vector<T> &a,
+                                const std::vector<T> &b) {
   // Algorithm:
   //  write A and B for the sequences, with elements a_0 ..
   //  let |A| = M and |B| = N be the lengths, and have
@@ -57,20 +64,20 @@ int32 LevenshteinEditDistance(const std::vector<T> &a,
   // The outer iterations range over m = 0..M.
 
   int M = a.size(), N = b.size();
-  std::vector<int32> e(N+1);
-  std::vector<int32> e_tmp(N+1);
+  std::vector<int32_t> e(N+1);
+  std::vector<int32_t> e_tmp(N+1);
   // initialize e.
   for (size_t i = 0; i < e.size(); i++)
     e[i] = i;
-  for (int32 m = 1; m <= M; m++) {
+  for (int32_t m = 1; m <= M; m++) {
     // computing E(m, .) from E(m-1, .)
     // handle special case n = 0:
     e_tmp[0] = e[0] + 1;
 
-    for (int32 n = 1; n <= N; n++) {
-      int32 term1 = e[n-1] + (a[m-1] == b[n-1] ? 0 : 1);
-      int32 term2 = e[n] + 1;
-      int32 term3 = e_tmp[n-1] + 1;
+    for (int32_t n = 1; n <= N; n++) {
+      int32_t term1 = e[n-1] + (a[m-1] == b[n-1] ? 0 : 1);
+      int32_t term2 = e[n] + 1;
+      int32_t term3 = e_tmp[n-1] + 1;
       e_tmp[n] = std::min(term1, std::min(term2, term3));
     }
     e = e_tmp;
@@ -79,18 +86,18 @@ int32 LevenshteinEditDistance(const std::vector<T> &a,
 }
 //
 struct error_stats {
-  int32 ins_num;
-  int32 del_num;
-  int32 sub_num;
-  int32 total_cost;  // minimum total cost to the current alignment.
+  int32_t ins_num;
+  int32_t del_num;
+  int32_t sub_num;
+  int32_t total_cost;  // minimum total cost to the current alignment.
 };
 // Note that both hyp and ref should not contain noise word in
 // the following implementation.
 
 template<class T>
-int32 LevenshteinEditDistance(const std::vector<T> &ref,
-                              const std::vector<T> &hyp,
-                              int32 *ins, int32 *del, int32 *sub) {
+int32_t LevenshteinEditDistance(const std::vector<T> &ref,
+                                const std::vector<T> &hyp,
+                                int32_t *ins, int32_t *del, int32_t *sub) {
   // temp sequence to remember error type and stats.
   std::vector<error_stats> e(ref.size()+1);
   std::vector<error_stats> cur_e(ref.size()+1);
@@ -109,9 +116,9 @@ int32 LevenshteinEditDistance(const std::vector<T> &ref,
     cur_e[0].ins_num++;
     cur_e[0].total_cost++;
     for (size_t ref_index = 1; ref_index <= ref.size(); ref_index ++) {
-     int32 ins_err = e[ref_index].total_cost + 1;
-     int32 del_err = cur_e[ref_index-1].total_cost + 1;
-     int32 sub_err = e[ref_index-1].total_cost;
+     int32_t ins_err = e[ref_index].total_cost + 1;
+     int32_t del_err = cur_e[ref_index-1].total_cost + 1;
+     int32_t sub_err = e[ref_index-1].total_cost;
       if (hyp[hyp_index-1] != ref[ref_index-1])
        sub_err++;
 
@@ -139,10 +146,10 @@ int32 LevenshteinEditDistance(const std::vector<T> &ref,
 }
 
 template<class T>
-int32 LevenshteinAlignment(const std::vector<T> &a,
-                           const std::vector<T> &b,
-                           T eps_symbol,
-                           std::vector<std::pair<T, T> > *output) {
+int32_t LevenshteinAlignment(const std::vector<T> &a,
+                             const std::vector<T> &b,
+                             T eps_symbol,
+                             std::vector<std::pair<T, T> > *output) {
   // Check inputs:
   {
     KALDI_ASSERT(output != NULL);
@@ -153,16 +160,16 @@ int32 LevenshteinAlignment(const std::vector<T> &a,
   // This is very memory-inefficiently implemented using a vector of vectors.
   size_t M = a.size(), N = b.size();
   size_t m, n;
-  std::vector<std::vector<int32> > e(M+1);
+  std::vector<std::vector<int32_t> > e(M+1);
   for (m = 0; m <=M; m++) e[m].resize(N+1);
   for (n = 0; n <= N; n++)
     e[0][n]  = n;
   for (m = 1; m <= M; m++) {
     e[m][0] = e[m-1][0] + 1;
     for (n = 1; n <= N; n++) {
-      int32 sub_or_ok = e[m-1][n-1] + (a[m-1] == b[n-1] ? 0 : 1);
-      int32 del = e[m-1][n] + 1;  // assumes a == ref, b == hyp.
-      int32 ins = e[m][n-1] + 1;
+      int32_t sub_or_ok = e[m-1][n-1] + (a[m-1] == b[n-1] ? 0 : 1);
+      int32_t del = e[m-1][n] + 1;  // assumes a == ref, b == hyp.
+      int32_t ins = e[m][n-1] + 1;
       e[m][n] = std::min(sub_or_ok, std::min(del, ins));
     }
   }
@@ -178,9 +185,9 @@ int32 LevenshteinAlignment(const std::vector<T> &a,
       last_m = m-1;
       last_n = n;
     } else {
-      int32 sub_or_ok = e[m-1][n-1] + (a[m-1] == b[n-1] ? 0 : 1);
-      int32 del = e[m-1][n] + 1;  // assumes a == ref, b == hyp.
-      int32 ins = e[m][n-1] + 1;
+      int32_t sub_or_ok = e[m-1][n-1] + (a[m-1] == b[n-1] ? 0 : 1);
+      int32_t del = e[m-1][n] + 1;  // assumes a == ref, b == hyp.
+      int32_t ins = e[m][n-1] + 1;
       // choose sub_or_ok if all else equal.
       if (sub_or_ok <= std::min(del, ins)) {
         last_m = m-1;
